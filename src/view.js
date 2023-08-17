@@ -1,3 +1,6 @@
+// import Swal from "../node_modules/sweetalert2/dist/sweetalert2.js";
+// import "../node_modules/sweetalert2/src/sweetalert2.scss";
+
 export default class View {
   constructor() {
     this.cells = document.querySelectorAll(".cell");
@@ -43,6 +46,9 @@ export default class View {
   }
 
   showMessage(message) {
-    alert(message);
+    setTimeout(() => {
+      alert(message);
+    }, 100);
+    // Swal.fire("Good job!", "You clicked the button!", "success");
   }
 }

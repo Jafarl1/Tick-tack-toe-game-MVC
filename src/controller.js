@@ -13,11 +13,14 @@ export default class Controller {
   handleClick(cell) {
     const result = this.model.makeMove(cell.id);
 
-    if (result) {
-      this.view.handleScore(result[0]);
+    if (!result) {
+      this.view.handlePlayerMove(cell.id, this.model.currentPlayer);
+    } else if (result[0] === null) {
       this.view.showMessage(result[1]);
     } else {
       this.view.handlePlayerMove(cell.id, this.model.currentPlayer);
+      this.view.handleScore(result[0]);
+      this.view.showMessage(result[1]);
     }
   }
 

@@ -42,8 +42,9 @@ export default class Model {
         this.currentPlayer = this.currentPlayer === "X" ? "O" : "X";
       }, 0);
     } else {
-      return "Invalid move";
+      return [null, "Invalid move"];
     }
+    
   }
 
   resetBoard() {
