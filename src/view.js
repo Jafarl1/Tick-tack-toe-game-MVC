@@ -21,19 +21,25 @@ export default class View {
     });
   }
 
-  clearBoard() {
-    this.cells.forEach((cell) => {
-      cell.innerHTML = "";
-    });
+  handleScore(scoreBoard) {
+    if (scoreBoard) {
+      this.player_x_score.innerHTML = scoreBoard["X"];
+      this.player_o_score.innerHTML = scoreBoard["O"];
+    }
   }
 
   handleRestart(callback) {
     this.newGameButton.onclick = () => callback();
   }
 
-  handleScore(winner) {
-    // winner === "X" ? this.player_x_score++ : runInThisContext.player_o_score++;
-    
+  clearBoard() {
+    this.cells.forEach((cell) => {
+      cell.innerHTML = "";
+    });
+  }
+
+  handleReset(callback) {
+    this.resetButton.onclick = () => callback();
   }
 
   showMessage(message) {

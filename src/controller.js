@@ -6,6 +6,7 @@ export default class Controller {
 
   init() {
     this.view.handleRestart(this.restartGame.bind(this));
+    this.view.handleReset(this.resetScore.bind(this));
     this.view.handleCellClick(this.handleClick.bind(this));
   }
 
@@ -23,5 +24,10 @@ export default class Controller {
   restartGame() {
     this.model.resetBoard();
     this.view.clearBoard();
+  }
+
+  resetScore() {
+    this.model.resetScore();
+    this.view.handleScore(this.model.scoreBoard);
   }
 }

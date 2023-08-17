@@ -2,6 +2,10 @@ export default class Model {
   constructor() {
     this.gameBoard = new Array(9).fill("");
     this.currentPlayer = "X";
+    this.scoreBoard = {
+      X: 0,
+      O: 0,
+    };
   }
 
   checkWinner(player) {
@@ -29,7 +33,8 @@ export default class Model {
     if (!this.gameBoard[id]) {
       this.gameBoard[id] = this.currentPlayer;
       if (this.checkWinner(this.currentPlayer)) {
-        return [this.currentPlayer, `Player ${this.currentPlayer} wins!`];
+        this.scoreBoard[this.currentPlayer]++;
+        return [this.scoreBoard, `Player ${this.currentPlayer} wins!`];
       } else if (this.checkDraw()) {
         return [null, "The game ended in a draw."];
       }
@@ -44,5 +49,12 @@ export default class Model {
   resetBoard() {
     this.gameBoard = new Array(9).fill("");
     this.currentPlayer = "X";
+  }
+
+  resetScore() {
+    this.scoreBoard = {
+      X: 0,
+      O: 0,
+    };
   }
 }
