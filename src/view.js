@@ -16,12 +16,14 @@ export default class View {
     });
   }
 
-  handlePlayerMove(id, player) {
-    this.cells.forEach((cell) => {
-      if (cell.id === id) {
-        cell.innerHTML = player;
-      }
-    });
+  handlePlayerMove(id, player, movePermission) {
+    if (movePermission) {
+      this.cells.forEach((cell) => {
+        if (cell.id === id) {
+          cell.innerHTML = player;
+        }
+      });
+    }
   }
 
   handleScore(scoreBoard) {
