@@ -56,7 +56,7 @@ body {
 .game-board {
   width: 100%;
   height: 500px;
-  background-image: url(../assets/tic-tac-toe-bg.jpg);
+  background-image: url(./assets/tic-tac-toe-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

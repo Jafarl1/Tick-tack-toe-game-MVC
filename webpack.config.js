@@ -33,7 +33,6 @@ module.exports = {
         // Use MiniCssExtractPlugin loader to extract CSS into separate files
         use: [
           MiniCssExtractPlugin.loader,
-          "style-loader",
           "css-loader", // Load CSS
           "sass-loader", // Convert Sass to CSS
         ],
@@ -41,17 +40,7 @@ module.exports = {
       {
         // Test for image files
         test: /\.(png|jpe?g|gif|svg)$/i,
-        tyep: "asset",
-        // Use 'file-loader' to handle images
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "images", // Output path for images
-            },
-          },
-        ],
+        type: "asset/resource"
       },
     ],
   },

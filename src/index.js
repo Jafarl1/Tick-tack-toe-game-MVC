@@ -1,7 +1,8 @@
 import Controller from "./controller.js";
 import Model from "./model.js";
 import View from "./view.js";
-// import "./style.css";
+
+import "./style.css";
 
 function initialize() {
   const model = new Model();
