@@ -81,3 +81,9 @@ li {
   font-size: 4rem;
   font-family: cursive;
 }
+.swal2-confirm {
+  border: 2px solid black !important;
+  background-color: transparent !important;
+  color: black !important;
+  box-shadow: none !important;
+}

@@ -1,5 +1,5 @@
-// import Swal from "../node_modules/sweetalert2/dist/sweetalert2.js";
-// import "../node_modules/sweetalert2/src/sweetalert2.scss";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 export default class View {
   constructor() {
@@ -47,8 +47,10 @@ export default class View {
 
   showMessage(message) {
     setTimeout(() => {
-      alert(message);
+      Swal.fire({
+        icon: message === "Invalid move" ? "error" : "success",
+        title: message,
+      });
     }, 100);
-    // Swal.fire("Good job!", "You clicked the button!", "success");
   }
 }
